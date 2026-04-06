@@ -1,0 +1,16 @@
+# Ignore python caches
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Ignore the large 1,000,000 row dataset (too big for standard GitHub)
+data/
+news_data.csv
+
+# Ignore Docker volumes and states
+.docker/
+kafka-data/
+
+# OS junk
+.DS_Store
+Thumbs.db
