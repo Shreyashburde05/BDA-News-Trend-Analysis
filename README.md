@@ -72,3 +72,39 @@ You can modify the producer speed or Kafka broker settings by setting environmen
 *   `ROWS_PER_SECOND`: Change streaming speed (e.g., `set ROWS_PER_SECOND=1000`)
 *   `KAFKA_BROKER`: Broker address (default: `localhost:9092`)
 *   `KAFKA_TOPIC`: Kafka topic name (default: `news-stream`)
+
+---
+
+## 🟢 Quick Start for Person 2 (Spark Streaming)
+You are taking over from Person 1. Follow these steps to continue the project:
+
+### 1. Setup Your Environment
+*   **Clone this repository**: `git clone https://github.com/Shreyashburde05/BDA-News-Trend-Analysis.git`
+*   **Install dependencies**: `pip install -r requirements.txt`
+*   **Generate Data**: `python scripts/generate_dataset.py` (The 92MB CSV is ignored by git, so you must generate it once on your machine).
+
+### 2. Start the Data Stream
+*   **Launch Kafka**: `docker-compose -f docker/docker-compose.yml up -d`
+*   **Initialize Topic**: `python scripts/create_topic.py`
+*   **Start the Producer**: `python src/producer.py` (Leave this terminal running).
+
+### 3. Start Your Coding (Spark)
+Create a new file (e.g., `spark_consumer.py`). Use the connection details below to start your real-time analysis:
+*   **Kafka Broker**: `localhost:9092`
+*   **Topic**: `news-stream`
+*   **Schema for parsing JSON**:
+```python
+from pyspark.sql.types import StructType, StringType, IntegerType
+
+schema = StructType() \
+    .add("id", IntegerType()) \
+    .add("headline", StringType()) \
+    .add("category", StringType()) \
+    .add("timestamp", StringType()) \
+    .add("source", StringType())
+```
+
+### 4. Suggested Analysis Tasks
+*   Implement **Windowed Aggregation** to find trending categories every minute.
+*   Perform **Sentiment Analysis** or Keyword Extraction on the headlines.
+*   Save the analytical results to the `output/` directory as Parquet or CSV files.
