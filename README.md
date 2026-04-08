@@ -1,4 +1,4 @@
----
+
 
 ## 📌 Project Overview
 
@@ -140,4 +140,3 @@ python src/consumer.py
 * 🧠 Sentiment analysis on headlines
 * ☁️ Deployment on cloud (AWS/GCP)
 
----
