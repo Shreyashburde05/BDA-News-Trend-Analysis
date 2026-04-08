@@ -43,7 +43,7 @@ for message in consumer:
     total_messages += 1
 
     # Print every 1000 messages
-    if total_messages % 1000 == 0:
+    if total_messages % 50 == 0:
         print("\n" + "="*50)
         print(f"Processed {total_messages} messages")
 
