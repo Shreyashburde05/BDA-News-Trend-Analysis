@@ -8,7 +8,7 @@ st.title("📊 Real-Time News Trends Dashboard")
 # Load data
 @st.cache_data
 def load_data():
-    return pd.read_csv("src/output.csv")
+    return pd.read_csv("output.csv")
 
 df = load_data()
 

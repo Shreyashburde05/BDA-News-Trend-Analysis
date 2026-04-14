@@ -8,4 +8,7 @@ pandas>=2.0
 # ── Kafka producer & topic management ──────
 kafka-python>=2.0.2
 
+# ── Visualization ──────────────────────────
+plotly>=5.0.0
+
 # (Person 2's PySpark requirements have been removed from this list)

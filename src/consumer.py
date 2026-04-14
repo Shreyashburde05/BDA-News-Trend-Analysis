@@ -63,7 +63,7 @@ for message in consumer:
         print("📊 Distribution (%):", percentages)
 
         # 💾 Save to CSV
-        with open("output.csv", "w", newline="") as f:
+        with open("src/output.csv", "w", newline="") as f:
             writer = csv.writer(f)
             writer.writerow(["Category", "Count"])
             for k, v in category_count.items():
