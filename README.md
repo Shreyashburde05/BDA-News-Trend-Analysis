@@ -139,4 +139,6 @@ python src/consumer.py
 * ⏱ Window-based trend analysis
 * 🧠 Sentiment analysis on headlines
 * ☁️ Deployment on cloud (AWS/GCP)
+* Fake News Detection
+* personalised news
 
